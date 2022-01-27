@@ -1,0 +1,76 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+		<LangVersion>8.0</LangVersion>
+		<Version>1.1.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Abstract\**" />
+    <Compile Remove="Concrete\**" />
+    <Compile Remove="Handlers\Cars\**" />
+    <Compile Remove="Handlers\Lookups\**" />
+    <Compile Remove="RulesForBusiness\**" />
+    <EmbeddedResource Remove="Abstract\**" />
+    <EmbeddedResource Remove="Concrete\**" />
+    <EmbeddedResource Remove="Handlers\Cars\**" />
+    <EmbeddedResource Remove="Handlers\Lookups\**" />
+    <EmbeddedResource Remove="RulesForBusiness\**" />
+    <None Remove="Abstract\**" />
+    <None Remove="Concrete\**" />
+    <None Remove="Handlers\Cars\**" />
+    <None Remove="Handlers\Lookups\**" />
+    <None Remove="RulesForBusiness\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Handlers\Authorizations\Commands\xRegisterUser.cs" />
+    <Compile Remove="Helpers\EnumerableExtensions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Fakes\BeniOku.md" />
+    <None Remove="Fakes\BeniOku.md_" />
+    <None Remove="Workflow.md" />
+    <None Remove="Workflow.md_" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+    <PackageReference Include="FluentValidation" Version="9.3.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="9.3.0" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Refit" Version="5.2.4" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.8.0" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.8.0" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.8.0" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.8.0" />    
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="..\Entities\Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="BusinessAspects\InstrumentationBehavior.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Adapters\" />
+  </ItemGroup>
+
+</Project>
